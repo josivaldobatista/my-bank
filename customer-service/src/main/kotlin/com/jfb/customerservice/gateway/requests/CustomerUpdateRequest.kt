@@ -1,6 +1,7 @@
 package com.jfb.customerservice.gateway.requests
 
 import com.fasterxml.jackson.annotation.JsonAlias
+import com.jfb.customerservice.validations.EmailAvailable
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotEmpty
 import javax.validation.constraints.NotNull
@@ -20,6 +21,7 @@ data class CustomerUpdateRequest(
   @field:NotNull(message = "Idade deve ser informado")
   val age: Int,
 
+  @EmailAvailable
   @field:Email(message = "Email deve em um formato válido")
   val email: String
 )
